@@ -1,0 +1,175 @@
+import System
+import System.Collections.Generic
+import System.ComponentModel
+import System.Data
+import System.Drawing
+import System.Net
+import System.Net.Mail
+import System.Text.RegularExpressions
+import System.Windows.Forms
+
+namespace SynNetMailDemo
+
+	public partial class Form1 extends System.Windows.Forms.Form
+
+		public method Form1
+			endparams
+		proc
+			this.InitializeComponent()
+			loadSettings()
+		endmethod
+		
+		private method btnSend_Click, void
+			sender, @object 
+			e, @System.EventArgs 
+			endparams
+			record
+				msg, @MailMessage
+				address, @MailAddress
+				smtp, @SmtpClient
+			endrecord
+		proc
+
+			;;Validate the FROM address
+			if (!validateEmail("FROM",txtFrom))
+				mreturn
+
+			;;Validate the TO address
+			if (!validateEmail("TO",txtTo))
+				mreturn
+				
+			;;If there is a CC address then validate it
+			if (txtCC.Text.Length>0)
+				if (!validateEmail("CC",txtCC))
+					mreturn
+			
+			;;If there is a BCC address then validate it
+			if (txtBCC.Text.Length>0)
+				if (!validateEmail("BCC",txtBCC))
+					mreturn
+					
+			;;Make sure there is a subject
+			if (txtSubject.Text.Length==0)
+			begin
+				MessageBox.Show("Please provide a subject!")
+				txtSubject.Focus()
+				mreturn
+			end
+
+			;;Make sure there is a body
+			if (txtBody.Text.Length==0)
+			begin
+				MessageBox.Show("Please provide a message body!")
+				txtSubject.Focus()
+				mreturn
+			end
+			
+			;;Save the settings
+			saveSettings()
+
+			;;Ready to send the email
+			
+			;;Create a new MailMessage object
+			msg = new MailMessage(txtFrom.Text,txtTo.Text,txtSubject.Text,txtBody.Text)
+
+			;;If we have a CC address, use it
+			if (txtCC.Text.Length>0)
+				msg.CC.Add(new MailAddress(txtCC.Text))
+
+			;;If we have a BCC address, use it
+			if (txtBCC.Text.Length>0)
+				msg.Bcc.Add(new MailAddress(txtBCC.Text))
+			
+			;;Create a new SmtpClient object and specify the server and login details
+			smtp = new SmtpClient(Properties.Settings.Default.SmtpServer,Properties.Settings.Default.SmtpPort)
+			smtp.Credentials = new NetworkCredential(Properties.Settings.Default.SmtpUser, Properties.Settings.Default.SmtpPassword)
+
+			;;Send the message
+			try
+			begin
+				smtp.Send(msg)
+				MessageBox.Show("Message sent")
+			end
+			catch (e, @Exception)
+			begin
+				MessageBox.Show("Error: " + e.Message)
+			end
+			endtry
+
+			;;Clean up
+			smtp.Dispose()
+			msg.Dispose()
+			
+		endmethod
+
+		private method validateEmail	,Boolean
+			required in emailField		,@String
+			required in emailControl	,@TextBox
+			endparams
+			record
+				emailChecker			,@Regex
+				emailMatch				,@Match
+			endrecord
+		proc
+			emailChecker = new Regex(Properties.Resources.EmailRegex)
+			emailMatch = emailChecker.Match(emailControl.Text)
+			if (emailMatch.Success) then
+				mreturn true
+			else
+			begin
+				MessageBox.Show(String.Format("Field {0} does not contain a valid email address!",emailField))
+				emailControl.SelectAll()
+				emailControl.Focus()
+				mreturn false
+			end
+		endmethod
+		
+		private method btnDelete_Click, void
+			sender, @object 
+			e, @System.EventArgs 
+			endparams
+		proc
+			resetSettings()
+		endmethod
+
+		method loadSettings, void
+			endparams
+		proc
+			txtServer.Text = Properties.Settings.Default.SmtpServer
+			txtPort.Text = Properties.Settings.Default.SmtpPort
+			txtUser.Text = Properties.Settings.Default.SmtpUser
+			txtPassword.Text = Properties.Settings.Default.SmtpPassword
+			txtFrom.Text = Properties.Settings.Default.SmtpFromAddress
+		endmethod
+
+		method saveSettings, void
+			endparams
+		proc
+			Properties.Settings.Default.SmtpServer = txtServer.Text
+			Properties.Settings.Default.SmtpPort = txtPort.Text
+			Properties.Settings.Default.SmtpUser = txtUser.Text
+			Properties.Settings.Default.SmtpPassword = txtPassword.Text
+			Properties.Settings.Default.SmtpFromAddress = txtFrom.Text
+			Properties.Settings.Default.Save()
+		endmethod
+
+		method resetSettings, void
+			endparams
+		proc
+			Properties.Settings.Default.SmtpServer = "mail.somedomain.com"
+			Properties.Settings.Default.SmtpPort = 25
+			Properties.Settings.Default.SmtpUser = "someone@somedomain.com"
+			Properties.Settings.Default.SmtpPassword = "password"
+			Properties.Settings.Default.SmtpFromAddress = "someone@somedomain.com"
+			Properties.Settings.Default.Save()
+			
+			txtServer.Text = Properties.Settings.Default.SmtpServer
+			txtPort.Text = Properties.Settings.Default.SmtpPort
+			txtUser.Text = Properties.Settings.Default.SmtpUser
+			txtPassword.Text = Properties.Settings.Default.SmtpPassword
+			txtFrom.Text = Properties.Settings.Default.SmtpFromAddress
+		endmethod
+		
+	endclass
+endnamespace
+

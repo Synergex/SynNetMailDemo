@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{BBD0F5D1-1CC4-42FD-BA4C-A96779C64378}") = "SynNetMailDemo", "SynNetMailDemo.synproj", "{3737FACB-3923-4049-94C1-EFBEEA8DACC4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{40F9A294-4DB5-4D5E-B2D4-D7D06CAC0F1F}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.txt = ReadMe.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3737FACB-3923-4049-94C1-EFBEEA8DACC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3737FACB-3923-4049-94C1-EFBEEA8DACC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3737FACB-3923-4049-94C1-EFBEEA8DACC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3737FACB-3923-4049-94C1-EFBEEA8DACC4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

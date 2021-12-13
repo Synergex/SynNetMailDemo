@@ -1,0 +1,110 @@
+
+namespace SynNetMailDemo.Properties
+
+	{System.Runtime.CompilerServices.CompilerGeneratedAttribute()}
+	{System.CodeDom.Compiler.GeneratedCodeAttribute(((string)"Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator"), ((string)"10.0.0.0"))}
+	sealed public partial class Settings extends System.Configuration.ApplicationSettingsBase
+
+		private static defaultInstance, @Settings, (Settings)System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())
+
+		public static property Default, @Settings
+			method get
+			proc
+				begin
+					mreturn defaultInstance
+				end
+			endmethod
+		endproperty
+
+		{System.Configuration.UserScopedSettingAttribute()}
+		{System.Diagnostics.DebuggerNonUserCodeAttribute()}
+		{System.Configuration.DefaultSettingValueAttribute(((string)"mail.somedomain.com"))}
+		public property SmtpServer, string
+			method get
+			proc
+				begin
+					mreturn (string)this[((string)"SmtpServer")]
+				end
+			endmethod
+			method set
+			proc
+				begin
+					this[((string)"SmtpServer")] = value
+				end
+			endmethod
+		endproperty
+
+		{System.Configuration.UserScopedSettingAttribute()}
+		{System.Diagnostics.DebuggerNonUserCodeAttribute()}
+		{System.Configuration.DefaultSettingValueAttribute(((string)"25"))}
+		public property SmtpPort, int
+			method get
+			proc
+				begin
+					mreturn (int)this[((string)"SmtpPort")]
+				end
+			endmethod
+			method set
+			proc
+				begin
+					this[((string)"SmtpPort")] = value
+				end
+			endmethod
+		endproperty
+
+		{System.Configuration.UserScopedSettingAttribute()}
+		{System.Diagnostics.DebuggerNonUserCodeAttribute()}
+		{System.Configuration.DefaultSettingValueAttribute(((string)"someone@somedomain.com"))}
+		public property SmtpUser, string
+			method get
+			proc
+				begin
+					mreturn (string)this[((string)"SmtpUser")]
+				end
+			endmethod
+			method set
+			proc
+				begin
+					this[((string)"SmtpUser")] = value
+				end
+			endmethod
+		endproperty
+
+		{System.Configuration.UserScopedSettingAttribute()}
+		{System.Diagnostics.DebuggerNonUserCodeAttribute()}
+		{System.Configuration.DefaultSettingValueAttribute(((string)"password"))}
+		public property SmtpPassword, string
+			method get
+			proc
+				begin
+					mreturn (string)this[((string)"SmtpPassword")]
+				end
+			endmethod
+			method set
+			proc
+				begin
+					this[((string)"SmtpPassword")] = value
+				end
+			endmethod
+		endproperty
+
+		{System.Configuration.UserScopedSettingAttribute()}
+		{System.Diagnostics.DebuggerNonUserCodeAttribute()}
+		{System.Configuration.DefaultSettingValueAttribute(((string)"someone@somedomain.com"))}
+		public property SmtpFromAddress, string
+			method get
+			proc
+				begin
+					mreturn (string)this[((string)"SmtpFromAddress")]
+				end
+			endmethod
+			method set
+			proc
+				begin
+					this[((string)"SmtpFromAddress")] = value
+				end
+			endmethod
+		endproperty
+	endclass
+endnamespace
+

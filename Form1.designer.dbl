@@ -1,0 +1,292 @@
+
+namespace SynNetMailDemo
+
+	public partial class Form1 extends System.Windows.Forms.Form
+
+		private lblTo, @System.Windows.Forms.Label
+		private lblPort, @System.Windows.Forms.Label
+		private lblMessage, @System.Windows.Forms.Label
+		private txtUser, @System.Windows.Forms.TextBox
+		private lblCc, @System.Windows.Forms.Label
+		private lblBCC, @System.Windows.Forms.Label
+		private txtTo, @System.Windows.Forms.TextBox
+		private txtPort, @System.Windows.Forms.TextBox
+		private txtCC, @System.Windows.Forms.TextBox
+		private txtBCC, @System.Windows.Forms.TextBox
+		private lblSubject, @System.Windows.Forms.Label
+		private lblPassword, @System.Windows.Forms.Label
+		private btnSend, @System.Windows.Forms.Button
+		private txtBody, @System.Windows.Forms.TextBox
+		private lblFrom, @System.Windows.Forms.Label
+		private txtSubject, @System.Windows.Forms.TextBox
+		private lblServer, @System.Windows.Forms.Label
+		private txtPassword, @System.Windows.Forms.TextBox
+		private txtFrom, @System.Windows.Forms.TextBox
+		private btnDelete, @System.Windows.Forms.Button
+		private txtServer, @System.Windows.Forms.TextBox
+		private pnlButtons, @System.Windows.Forms.FlowLayoutPanel
+		private lblUser, @System.Windows.Forms.Label
+
+		private method InitializeComponent, void
+			endparams
+		proc
+			begin
+				this.lblFrom = new System.Windows.Forms.Label()
+				this.txtFrom = new System.Windows.Forms.TextBox()
+				this.txtTo = new System.Windows.Forms.TextBox()
+				this.lblTo = new System.Windows.Forms.Label()
+				this.lblCc = new System.Windows.Forms.Label()
+				this.lblBCC = new System.Windows.Forms.Label()
+				this.lblSubject = new System.Windows.Forms.Label()
+				this.txtCC = new System.Windows.Forms.TextBox()
+				this.txtBCC = new System.Windows.Forms.TextBox()
+				this.txtSubject = new System.Windows.Forms.TextBox()
+				this.lblMessage = new System.Windows.Forms.Label()
+				this.txtBody = new System.Windows.Forms.TextBox()
+				this.pnlButtons = new System.Windows.Forms.FlowLayoutPanel()
+				this.btnSend = new System.Windows.Forms.Button()
+				this.btnDelete = new System.Windows.Forms.Button()
+				this.lblServer = new System.Windows.Forms.Label()
+				this.txtServer = new System.Windows.Forms.TextBox()
+				this.lblPort = new System.Windows.Forms.Label()
+				this.txtPort = new System.Windows.Forms.TextBox()
+				this.lblUser = new System.Windows.Forms.Label()
+				this.txtUser = new System.Windows.Forms.TextBox()
+				this.lblPassword = new System.Windows.Forms.Label()
+				this.txtPassword = new System.Windows.Forms.TextBox()
+				this.pnlButtons.SuspendLayout()
+				this.SuspendLayout()
+				;; 
+				;; lblFrom
+				;; 
+				this.lblFrom.AutoSize = ((boolean)true)
+				this.lblFrom.Location = new System.Drawing.Point(12, 45)
+				this.lblFrom.Name = ((string)"lblFrom")
+				this.lblFrom.Size = new System.Drawing.Size(30, 13)
+				this.lblFrom.TabIndex = 0
+				this.lblFrom.Text = ((string)"From")
+				;; 
+				;; txtFrom
+				;; 
+				this.txtFrom.Location = new System.Drawing.Point(89, 42)
+				this.txtFrom.Name = ((string)"txtFrom")
+				this.txtFrom.Size = new System.Drawing.Size(743, 20)
+				this.txtFrom.TabIndex = 1
+				;; 
+				;; txtTo
+				;; 
+				this.txtTo.Location = new System.Drawing.Point(89, 68)
+				this.txtTo.Name = ((string)"txtTo")
+				this.txtTo.Size = new System.Drawing.Size(743, 20)
+				this.txtTo.TabIndex = 2
+				;; 
+				;; lblTo
+				;; 
+				this.lblTo.AutoSize = ((boolean)true)
+				this.lblTo.Location = new System.Drawing.Point(12, 71)
+				this.lblTo.Name = ((string)"lblTo")
+				this.lblTo.Size = new System.Drawing.Size(20, 13)
+				this.lblTo.TabIndex = 3
+				this.lblTo.Text = ((string)"To")
+				;; 
+				;; lblCc
+				;; 
+				this.lblCc.AutoSize = ((boolean)true)
+				this.lblCc.Location = new System.Drawing.Point(12, 97)
+				this.lblCc.Name = ((string)"lblCc")
+				this.lblCc.Size = new System.Drawing.Size(21, 13)
+				this.lblCc.TabIndex = 4
+				this.lblCc.Text = ((string)"CC")
+				;; 
+				;; lblBCC
+				;; 
+				this.lblBCC.AutoSize = ((boolean)true)
+				this.lblBCC.Location = new System.Drawing.Point(12, 123)
+				this.lblBCC.Name = ((string)"lblBCC")
+				this.lblBCC.Size = new System.Drawing.Size(28, 13)
+				this.lblBCC.TabIndex = 5
+				this.lblBCC.Text = ((string)"BCC")
+				;; 
+				;; lblSubject
+				;; 
+				this.lblSubject.AutoSize = ((boolean)true)
+				this.lblSubject.Location = new System.Drawing.Point(12, 149)
+				this.lblSubject.Name = ((string)"lblSubject")
+				this.lblSubject.Size = new System.Drawing.Size(43, 13)
+				this.lblSubject.TabIndex = 6
+				this.lblSubject.Text = ((string)"Subject")
+				;; 
+				;; txtCC
+				;; 
+				this.txtCC.Location = new System.Drawing.Point(89, 94)
+				this.txtCC.Name = ((string)"txtCC")
+				this.txtCC.Size = new System.Drawing.Size(743, 20)
+				this.txtCC.TabIndex = 7
+				;; 
+				;; txtBCC
+				;; 
+				this.txtBCC.Location = new System.Drawing.Point(89, 120)
+				this.txtBCC.Name = ((string)"txtBCC")
+				this.txtBCC.Size = new System.Drawing.Size(743, 20)
+				this.txtBCC.TabIndex = 8
+				;; 
+				;; txtSubject
+				;; 
+				this.txtSubject.Location = new System.Drawing.Point(89, 146)
+				this.txtSubject.Name = ((string)"txtSubject")
+				this.txtSubject.Size = new System.Drawing.Size(743, 20)
+				this.txtSubject.TabIndex = 9
+				this.txtSubject.Text = ((string)"Test Message")
+				;; 
+				;; lblMessage
+				;; 
+				this.lblMessage.AutoSize = ((boolean)true)
+				this.lblMessage.Location = new System.Drawing.Point(12, 175)
+				this.lblMessage.Name = ((string)"lblMessage")
+				this.lblMessage.Size = new System.Drawing.Size(50, 13)
+				this.lblMessage.TabIndex = 10
+				this.lblMessage.Text = ((string)"Message")
+				;; 
+				;; txtBody
+				;; 
+				this.txtBody.Location = new System.Drawing.Point(89, 172)
+				this.txtBody.Multiline = ((boolean)true)
+				this.txtBody.Name = ((string)"txtBody")
+				this.txtBody.Size = new System.Drawing.Size(743, 280)
+				this.txtBody.TabIndex = 11
+				this.txtBody.Text = ((string)"This is a test message, please delete it!")
+				;; 
+				;; pnlButtons
+				;; 
+				this.pnlButtons.AutoSize = ((boolean)true)
+				this.pnlButtons.Controls.Add(this.btnSend)
+				this.pnlButtons.Controls.Add(this.btnDelete)
+				this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Bottom
+				this.pnlButtons.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft
+				this.pnlButtons.Location = new System.Drawing.Point(0, 469)
+				this.pnlButtons.Name = ((string)"pnlButtons")
+				this.pnlButtons.Size = new System.Drawing.Size(844, 29)
+				this.pnlButtons.TabIndex = 12
+				;; 
+				;; btnSend
+				;; 
+				this.btnSend.Location = new System.Drawing.Point(766, 3)
+				this.btnSend.Name = ((string)"btnSend")
+				this.btnSend.Size = new System.Drawing.Size(75, 23)
+				this.btnSend.TabIndex = 0
+				this.btnSend.Text = ((string)"Send")
+				this.btnSend.UseVisualStyleBackColor = ((boolean)true)
+				addhandler(this.btnSend.Click, btnSend_Click)
+				;; 
+				;; btnDelete
+				;; 
+				this.btnDelete.Location = new System.Drawing.Point(658, 3)
+				this.btnDelete.Name = ((string)"btnDelete")
+				this.btnDelete.Size = new System.Drawing.Size(102, 23)
+				this.btnDelete.TabIndex = 1
+				this.btnDelete.Text = ((string)"Reset Settings")
+				this.btnDelete.UseVisualStyleBackColor = ((boolean)true)
+				addhandler(this.btnDelete.Click, btnDelete_Click)
+				;; 
+				;; lblServer
+				;; 
+				this.lblServer.AutoSize = ((boolean)true)
+				this.lblServer.Location = new System.Drawing.Point(12, 19)
+				this.lblServer.Name = ((string)"lblServer")
+				this.lblServer.Size = new System.Drawing.Size(71, 13)
+				this.lblServer.TabIndex = 13
+				this.lblServer.Text = ((string)"SMTP Server")
+				;; 
+				;; txtServer
+				;; 
+				this.txtServer.Location = new System.Drawing.Point(89, 16)
+				this.txtServer.Name = ((string)"txtServer")
+				this.txtServer.Size = new System.Drawing.Size(202, 20)
+				this.txtServer.TabIndex = 14
+				;; 
+				;; lblPort
+				;; 
+				this.lblPort.AutoSize = ((boolean)true)
+				this.lblPort.Location = new System.Drawing.Point(297, 19)
+				this.lblPort.Name = ((string)"lblPort")
+				this.lblPort.Size = new System.Drawing.Size(26, 13)
+				this.lblPort.TabIndex = 15
+				this.lblPort.Text = ((string)"Port")
+				;; 
+				;; txtPort
+				;; 
+				this.txtPort.Location = new System.Drawing.Point(329, 16)
+				this.txtPort.Name = ((string)"txtPort")
+				this.txtPort.Size = new System.Drawing.Size(59, 20)
+				this.txtPort.TabIndex = 16
+				;; 
+				;; lblUser
+				;; 
+				this.lblUser.AutoSize = ((boolean)true)
+				this.lblUser.Location = new System.Drawing.Point(394, 19)
+				this.lblUser.Name = ((string)"lblUser")
+				this.lblUser.Size = new System.Drawing.Size(55, 13)
+				this.lblUser.TabIndex = 17
+				this.lblUser.Text = ((string)"Username")
+				;; 
+				;; txtUser
+				;; 
+				this.txtUser.Location = new System.Drawing.Point(455, 16)
+				this.txtUser.Name = ((string)"txtUser")
+				this.txtUser.Size = new System.Drawing.Size(180, 20)
+				this.txtUser.TabIndex = 18
+				;; 
+				;; lblPassword
+				;; 
+				this.lblPassword.AutoSize = ((boolean)true)
+				this.lblPassword.Location = new System.Drawing.Point(641, 19)
+				this.lblPassword.Name = ((string)"lblPassword")
+				this.lblPassword.Size = new System.Drawing.Size(53, 13)
+				this.lblPassword.TabIndex = 19
+				this.lblPassword.Text = ((string)"Password")
+				;; 
+				;; txtPassword
+				;; 
+				this.txtPassword.Location = new System.Drawing.Point(697, 16)
+				this.txtPassword.Name = ((string)"txtPassword")
+				this.txtPassword.PasswordChar = ((char)'*')
+				this.txtPassword.Size = new System.Drawing.Size(135, 20)
+				this.txtPassword.TabIndex = 20
+				;; 
+				;; Form1
+				;; 
+				this.ClientSize = new System.Drawing.Size(844, 498)
+				this.Controls.Add(this.txtPassword)
+				this.Controls.Add(this.lblPassword)
+				this.Controls.Add(this.txtUser)
+				this.Controls.Add(this.lblUser)
+				this.Controls.Add(this.txtPort)
+				this.Controls.Add(this.lblPort)
+				this.Controls.Add(this.txtServer)
+				this.Controls.Add(this.lblServer)
+				this.Controls.Add(this.pnlButtons)
+				this.Controls.Add(this.txtBody)
+				this.Controls.Add(this.lblMessage)
+				this.Controls.Add(this.txtSubject)
+				this.Controls.Add(this.txtBCC)
+				this.Controls.Add(this.txtCC)
+				this.Controls.Add(this.lblSubject)
+				this.Controls.Add(this.lblBCC)
+				this.Controls.Add(this.lblCc)
+				this.Controls.Add(this.lblTo)
+				this.Controls.Add(this.txtTo)
+				this.Controls.Add(this.txtFrom)
+				this.Controls.Add(this.lblFrom)
+				this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+				this.MaximizeBox = ((boolean)false)
+				this.MinimizeBox = ((boolean)false)
+				this.Name = ((string)"Form1")
+				this.Text = ((string)"Synergy .NET Email Demo")
+				this.pnlButtons.ResumeLayout(((boolean)false))
+				this.ResumeLayout(((boolean)false))
+				this.PerformLayout()
+			end
+		endmethod
+	endclass
+endnamespace
+
